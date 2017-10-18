@@ -1,0 +1,22 @@
+#signInButton {
+	color: yellow;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+#kart {
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+#cartIcon {
+	height: 30px;
+	width: 30px;
+}
