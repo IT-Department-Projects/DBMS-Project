@@ -1,0 +1,195 @@
+{% extends "bootstrap/base.html" %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ELECTRONICS<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/electronics/mobile">Mobiles</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Mobile Accessories</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Laptops</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Televisions</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">CLOTHING<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/clothingPage">Men</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Women</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Baby & Kids</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HOME & FURNITURE<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/home_furniturePage">Kitchen & Dining</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Furniture</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Home Decor</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">BOOKS & MORE<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/books_morePage">Books</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Stationery</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Gaming & Accessories</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {% if not loggedIn %}
+          <li><a href="/login">Sign In</a></li>
+        {% else %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{firstName}}<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/account/orders">Your orders</a></li>
+            <li class="divider"></li>
+            <li><a href="/account/profile">Your profile</a></li>
+            <li class="divider"></li>
+            <li><a href="/logout">Sign Out</a></li>
+            <li class="divider"></li>
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<br>
+<br>
+
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹3,235</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+<div class="col-sm-5 col-md-3" style="margin-bottom: 30px">
+  <div class="thumbnail">
+    <img src="/static/images/book.jpg">
+  </div>
+  <div class="caption">
+    <h3>Harry Potter</h3>
+    <p>₹1,999</p>
+    <button class="btn btn-success">ADD TO CART</button>
+  </div>
+
+</div>
+
+{% endblock %}
