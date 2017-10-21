@@ -13,9 +13,54 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def root():
 	return render_template('index.html')
 
-@app.route("/login")
+
+
+@app.route("/login",methods=['GET','POST'])
 def login():
+	
+
+
+@app.route("/loginForm")
+def loginForm():
 	return render_template('login.html')
+
+
+@app.route("/register",methods=['GET','POST'])
+def register():
+	if request.method == 'POST':
+		#Parse form data    
+		password = request.form['password']
+		email = request.form['email']
+		firstName = request.form['firstName']
+		lastName = request.form['lastName']
+		address1 = request.form['address1']
+		zipcode = request.form['zipcode']
+		city = request.form['city']
+		state = request.form['state']
+		country = request.form['country']
+		phone = request.form['phone']
+
+		with sqlite3.connect('database.db') as con:
+			try:
+				cur = con.cursor()
+				cur.execute('INSERT INTO users (password, email, firstName, lastName, address1, zipcode, city, state, country, phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (hashlib.md5(password.encode()).hexdigest(), email, firstName, lastName, address1, zipcode, city, state, country, phone))
+
+				con.commit()
+
+				msg = "Registered Successfully"
+			except:
+				con.rollback()
+				msg = "Error occured"
+		con.close()
+		return render_template("login.html", error=msg)
+
+@app.route("/registerForm")
+def registrationForm():
+	return render_template("register.html")
+
+
+	
+	
 
 @app.route("/electronics/mobile")
 def electronicsPage():
@@ -37,4 +82,4 @@ def books_morePage():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+	app.run(debug=True)
