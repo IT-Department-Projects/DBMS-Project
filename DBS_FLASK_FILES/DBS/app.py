@@ -64,12 +64,24 @@ def registrationForm():
 	
 
 @app.route("/electronics/mobile")
-def electronicsPage():
+def electronics_mobile():
 	return render_template('electronics_mobile.html')
+
+@app.route("/electronics/mobile_accessories")
+def electronics_mobile_accessories():
+	return render_template('electronics_mobile_accessories.html')
+
+@app.route("/electronics/laptops")
+def electronics_laptops():
+	return render_template('electronics_laptops.html')
+
+@app.route("/electronics/televisions")
+def electronics_televisions():
+	return render_template('electronics_televisions.html')
 
 @app.route("/clothingPage")
 def clothingPage():
-	return render_template('clothingPage.html')
+	return render_template('clothingPage_men.html')
 
 @app.route("/home_furniturePage")
 def home_furniturePage():
