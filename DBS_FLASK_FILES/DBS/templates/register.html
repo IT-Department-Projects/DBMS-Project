@@ -5,7 +5,8 @@
   <title>Sign-Up/Login Form</title>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="static/css/style.css">  
+  <link rel="stylesheet" href="static/css/style.css"> 
+  <script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}"></script>
 </head>
 
 
@@ -15,7 +16,7 @@
   <div class="form">
     <div id="signup">   
       <h1>Sign Up for Free</h1>   
-      <form action="/" method="post"> 
+      <form action="/register" method="POST" onsubmit="return validate()"> 
       <div class="top-row">
           <div class="field-wrap">
             <label>
@@ -39,11 +40,20 @@
         <input type="email" name="email" required autocomplete="off"/>
       </div>
           
-      <div class="field-wrap">
-        <label>
-          Set A Password<span class="req">*</span>
-        </label>
-        <input type="password" name="password" required autocomplete="off"/>
+      <div class="top-row">
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password" name="password" required autocomplete="off" />
+          </div>
+        
+          <div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input type="password" name="cpassword" required autocomplete="off"/>
+          </div>
       </div>
 
       <div class="field-wrap">
@@ -89,7 +99,7 @@
         </label>
         <input type="text"required autocomplete="off"/>
         </div>          
-          <button type="submit" name="phone" class="button button-block"/><a href="http://127.0.0.1:5000/login">Get Started</a></button>
+          <button type="submit" name="phone" class="button button-block"/>Get Started</button>
       </form>
     </div>
   </div>
